@@ -1,5 +1,5 @@
 # ASA Datafest 2019
-My team won first place at the American Statistical Association 2019 Datafest competition held at Wesleyan University. We developed a dashboard tool to visualize player performance and player readiness for Canada's Rugby7 women's team. 
+My team won first place at the American Statistical Association 2019 Datafest competition held at Wesleyan University. We developed a dashboard tool to visualize player performance and player readiness for Canada's Rugby 7s women's team. 
 
 For more information on the American Statistical Association's nationwide Datafest competition, please follow this link: https://ww2.amstat.org/education/datafest/index.cfm
 
