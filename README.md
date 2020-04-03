@@ -1,13 +1,11 @@
 # ASA Datafest 2019
-My team won first place at the American Statistical Association 2019 Datafest competition held at Wesleyan University. We developed a dashboard tool to visualize player performance and player readiness for Canada's Rugby 7s women's team. 
+My team won first place at the American Statistical Association 2019 Datafest competition held at Wesleyan University. We developed a dashboard tool to visualize player performance and player readiness for Canada's Rugby 7s women's team. https://newsletter.blogs.wesleyan.edu/2019/04/15/wesleyan-wins-best-in-show-at-2019-datafest/
 
 For more information on the American Statistical Association's nationwide Datafest competition, please follow this link: https://ww2.amstat.org/education/datafest/index.cfm
 
-## The Challenge
-### How do we quantify the role of fatigue and workload in a team’s performance in Rugby 7s?
-The Canadian National Women's Rugby Team seeks advice on the role of workload and fatigue in the Rugby 7s. Rugby is a fast-paced, physically demanding sport that pushes the limits of athletic speed, endurance, and toughness. Rugby 7s players may play in up to three games in a day, resulting ina tremendous amount of athletic exertion. Substantial exertion results in fatigue, which many lead to the physiological deficits (e.g., dehydration), reduced athletic performance, and greater risk of injury.
-
-Despite the importance of managing player fatigue in professional athletics, very little is known about its effects, and many training decisions are based on “gut feel.” Currently, training load is measured through a combination of subjective measurements (asking players how hard they worked) and objective measurements from wearable technology. Fatigue is typically estimated by asking players how they feel in wellness surveys. However, there is no agreed-upon standard of defining fatigue so the relationship between workload and fatigue is unclear. In this challenge, we encourage you to explore new ways of measuring fatigue and examine its effects on players’ performance and physical wellness. The datasets provide a number of observations that we believe will be useful to measure fatigue in players of the Canadian National Women's Rugby Team in the 2017-2018 season. Remember that training load is not the same as fatigue, and one question to explore is whether you can find evidence that some measures of training load are better than others.
+## Challenge
+### How can we quantify athletic fatigue?
+Teams were challenged to analyze data from the Canada women's national rugby team towards the goal of redefining athlete fatigue.
 
 ## Our Solution
 
