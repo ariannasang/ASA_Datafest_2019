@@ -7,7 +7,11 @@ df <- df %>%
   select(car_name, cyl, vs, am, gear, carb) %>% 
   mutate_at(2:6, as.factor)
 
-
+phys_pca <- readRDS("data/physical_fatigue.rda") %>% 
+  select(PlayerID, Date, contains("PCA")) %>% 
+  gather("PCA", "value", PCA1:PCA2) 
+  
 
 source("R/slider.r")
 source("R/bargraph.r")
+source("R/timeseries.r")
