@@ -19,7 +19,7 @@ We developed visualization tool to analyze each player's performance in game *(u
 
 👉[See our presentation](https://docs.google.com/presentation/d/1Qq2EdIHjCxT5hdI-aC_XERe6D3GoNwCnsT3aficZUXE/edit?usp=sharing)
 
-![dashboard-screenshot](www/dash_sshot.PNG)
+![dashboard-screenshot](www/dash_sshot.png)
 
 # Components
 
