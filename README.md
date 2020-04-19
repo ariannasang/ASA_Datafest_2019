@@ -1,9 +1,12 @@
-# ASA Datafest 2019
-My team won first place at the American Statistical Association 2019 Datafest competition held at Wesleyan University. We developed a dashboard tool to visualize player performance and player readiness for Canada's Rugby 7s women's team. https://newsletter.blogs.wesleyan.edu/2019/04/15/wesleyan-wins-best-in-show-at-2019-datafest/
+![ball](www/rugby7-ball.jpg)
 
-For more information on the American Statistical Association's nationwide Datafest competition, please follow this link: https://ww2.amstat.org/education/datafest/index.cfm
+# ASA Datafest 2019
+My team won first place at the American Statistical Association 2019 Datafest competition held at Wesleyan University. We developed a dashboard tool to visualize player performance and player readiness for Canada's Rugby 7s women's team. [blog post](https://newsletter.blogs.wesleyan.edu/2019/04/15/wesleyan-wins-best-in-show-at-2019-datafest/)
+
+For more information on the American Statistical Association's nationwide Datafest competition, follow [this link](https://ww2.amstat.org/education/datafest/index.cfm)
 
 ## Challenge
+
 ### How can we quantify athletic fatigue?
 Teams were challenged to analyze data from the Canada women's national rugby team towards the goal of redefining athlete fatigue.
 
@@ -16,7 +19,7 @@ We developed visualization tool to analyze each player's performance in game *(u
 
 👉[See our presentation](https://docs.google.com/presentation/d/1Qq2EdIHjCxT5hdI-aC_XERe6D3GoNwCnsT3aficZUXE/edit?usp=sharing)
 
-![dashboard-screenshot](./static/dash_v1.PNG)
+![dashboard-screenshot](www/dash_sshot.PNG)
 
 # Components
 
@@ -55,9 +58,7 @@ Measuring a player’s performance during a game is one thing, understanding why
   * Menstruation
   * Nutrition
 
-
-  
-* Mental status
+ Mental status
   * ObjectiveRating
   * FocusRating
   * TrainingReadiness
