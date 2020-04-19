@@ -1,9 +1,9 @@
 ![ball](www/rugby7-ball.jpg)
 
 # ASA Datafest 2019
-My team won first place at the American Statistical Association 2019 Datafest competition held at Wesleyan University. We developed a dashboard tool to visualize player performance and player readiness for Canada's Rugby 7s women's team. [blog post](https://newsletter.blogs.wesleyan.edu/2019/04/15/wesleyan-wins-best-in-show-at-2019-datafest/)
+Our team won first place at the American Statistical Association 2019 Datafest competition held at Wesleyan University. [(blog post)](https://newsletter.blogs.wesleyan.edu/2019/04/15/wesleyan-wins-best-in-show-at-2019-datafest/) We developed a dashboard tool to visualize player performance and player readiness for Canada's Rugby 7s women's team. 
 
-For more information on the American Statistical Association's nationwide Datafest competition, follow [this link](https://ww2.amstat.org/education/datafest/index.cfm)
+For more information on the American Statistical Association's nationwide Datafest competition, follow [this link](https://ww2.amstat.org/education/datafest/index.cfm).
 
 ## Challenge
 
@@ -21,7 +21,7 @@ We developed visualization tool to analyze each player's performance in game *(u
 
 ![dashboard-screenshot](www/dash_sshot.png)
 
-# Components
+# Dashboard Components
 
 ## Game Videos
 
@@ -57,8 +57,7 @@ Measuring a player’s performance during a game is one thing, understanding why
   * Illness
   * Menstruation
   * Nutrition
-
- Mental status
+ * Mental status
   * ObjectiveRating
   * FocusRating
   * TrainingReadiness
