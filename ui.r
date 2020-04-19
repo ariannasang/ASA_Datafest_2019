@@ -2,16 +2,18 @@ library(shiny)
 library(datasets)
 
 fluidPage(
-  titlePanel("Miles Per Gallon"),
+  # theme = "bootstrap_darkly.css",
+  titlePanel("Rugby7 Player Analysis"),
   splitLayout(
     verticalLayout(
-      h3("Tournament 1"),
-      barGraphUI("one")
+      h3("Player A"),
+      # barGraphUI("one"),
+      timeSeriesUI("onetime")
     ),
     verticalLayout(
-      h3("Tournament 2"),
-      barGraphUI("two")
+      h3("Player B"),
+      # barGraphUI("two"),
+      timeSeriesUI("twotime")
     )
   )
 )
-
