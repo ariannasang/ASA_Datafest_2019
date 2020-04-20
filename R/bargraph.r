@@ -1,19 +1,18 @@
 barGraphUI <- function(id){
   ns <- NS(id)
   tagList(
-    radioButtons(ns("radiobutton"), "Select variable", colnames(df)[2:6], "cyl"),
-    textOutput(ns("var")),
+    textOutput(ns("p_t_sel")),
     plotOutput(ns("graph"))
   )
 }
 
-barGraph <- function(input, output, session){
-  output$var <- renderText({
-    input$radiobutton
-  })
-  
+barGraph <- function(input, output, session, p_sel, t_sel){
   output$graph <- renderPlot({
-    colplot(input$radiobutton)
+      filler()
+  })
+
+  output$p_t_sel <- renderText({
+    paste("Player: ", p_sel(), "; Tournament: ", t_sel())
   })
 }
 
@@ -28,5 +27,9 @@ colplot <- function(var){
          x = "",
          y = "")
 }
-colplot("cyl")
+# colplot("cyl")
+
+filler <- function(){
+  colplot("cyl")
+}
 

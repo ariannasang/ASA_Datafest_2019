@@ -34,12 +34,13 @@ rpe %>%
   select(Date, PlayerID, SessionType, SessionLoad) %>% 
   filter(PlayerID == 1, !is.na(SessionType)) %>% 
   arrange(Date) %>% 
-  
-  count(SessionType) %>% 
+  mutate(what_tournament = what_tournament_training_for(Date)) %>% 
+  count(what_tournament, SessionType) %>% 
   mutate(SessionType = fct_rev(SessionType)) %>% 
   ggplot() +
   geom_col(aes(SessionType, n)) +
   coord_flip() +
+  facet_wrap(~ what_tournament, scales = "free_x", ncol = 2) +
   labs(title = "Training Sessions",
        x = "",
        y = "")

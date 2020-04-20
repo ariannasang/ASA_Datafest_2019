@@ -20,9 +20,11 @@ timeSeries <- function(input, output, session){
 
 plot_time <- function(player_id){
   phys_pca %>% 
-    filter(PlayerID == player_id) %>%
+    filter(PlayerID == player_id) %>% 
     ggplot() +
     geom_line(aes(x = Date, y = value, color = PCA)) +
     labs(x = "",
          y = "")
 }
+
+# plot_time(1)
