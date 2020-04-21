@@ -57,8 +57,7 @@ Measuring a player’s performance during a game is one thing, understanding why
   * Illness
   * Menstruation
   * Nutrition
- * Mental status
-  * ObjectiveRating
+* Mental status
   * FocusRating
   * TrainingReadiness
   * Desire
