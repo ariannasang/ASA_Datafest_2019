@@ -1,30 +1,26 @@
 timeSeriesUI <- function(id){
   ns <- NS(id)
   tagList(
-    selectInput(ns("select"), "Player", unique(phys_pca$PlayerID), selected = 1),
     plotOutput(ns("graph"))
   )
-  
 }
 
-timeSeries <- function(input, output, session){
-  output$var <- renderText({
-    input$select
-  })
-  
+timeSeries <- function(input, output, session, data, title_stub){
   output$graph <- renderPlot({
-    plot_time(input$select)
+    plot_time(data(), title_stub)
   })
 }
 
 
-plot_time <- function(player_id){
-  phys_pca %>% 
-    filter(PlayerID == player_id) %>% 
+plot_time <- function(.data, .title_stub){
+  tname <- .data$Tournament[1]
+  .data %>% 
     ggplot() +
     geom_line(aes(x = Date, y = value, color = PCA)) +
-    labs(x = "",
+    theme(legend.position = "none") + 
+    labs(title = paste0(.title_stub), 
+         x = "",
          y = "")
 }
 
-# plot_time(1)
+# plot_time(filter_df(phys_pca, 1, "Dubai"))
