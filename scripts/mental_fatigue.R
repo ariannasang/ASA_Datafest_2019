@@ -58,7 +58,12 @@ scaled.mental_fatigue <- imp.mental_fatigue %>%
 physical.pca <-  prcomp(scaled.mental_fatigue[3:7], center = TRUE,scale. = TRUE)
 biplot(physical.pca)
 
+# PCA1: playerConfidence (trainingReadiness + FocusRating + ObjectiveRating)
+# PCA2: playerMood (Irritability + Desire)
+
 scaled.mental_fatigue$PCA1 <- physical.pca$x[, 1]
 scaled.mental_fatigue$PCA2 <- physical.pca$x[, 2]
 
-saveRDS(scaled.mental_fatigue, "mental_fatigue.rda")
+scaled.mental_fatigue %>%
+  select(1:9) 
+  # saveRDS("mental_fatigue.rda")
