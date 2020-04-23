@@ -11,15 +11,17 @@ fluidPage(
       splitLayout(
         timeSeriesUI("physPCA1"),
         timeSeriesUI("mentPCA1")
-      )
+      ),
+      trainingTimeUI("t1")
+      
     ),
     verticalLayout(
       selectInput("tsel2", "Tournament", tdates$Tournament, selected = tdates$Tournament[2]),
       splitLayout(
         timeSeriesUI("physPCA2"),
         timeSeriesUI("mentPCA2")
-      )
-      
+      ),
+      trainingTimeUI("t2")
     )
   )
 )
