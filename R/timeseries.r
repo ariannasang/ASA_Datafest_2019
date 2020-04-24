@@ -17,6 +17,7 @@ plot_time <- function(.data, .title_stub){
   .data %>% 
     ggplot() +
     geom_line(aes(x = Date, y = value, color = PCA)) +
+    ylim(-4, 4) + 
     theme(legend.position = "bottom", 
           legend.title = element_blank()) +
     labs(title = paste0(.title_stub), 

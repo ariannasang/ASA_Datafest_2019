@@ -19,15 +19,19 @@ training_over_time <- function(dataframe, title) {
            !is.na(SessionType),
            SessionType != "Game") %>% 
     arrange(Date) %>%
-    tail(21) %>% # 21 days before
     group_by(Date) %>%
     count(SessionType) %>%
     ungroup() %>%
     group_by(SessionType) %>%
     mutate(n = cumsum(n)) %>%
     ggplot(aes(x = Date, y = n, color= SessionType))+
-    geom_line(alpha = .5) +
-    labs(title = title )
+    geom_line(size = 0.8) +
+    theme(legend.position = "bottom", 
+          legend.title = element_blank()) +
+    scale_y_continuous(labels = scales::number_format()) + 
+    labs(title = title,
+         x = "", 
+         y = "")
 }
 
-training_over_time(filter_df(rpe, 1, "Dubai"), 'fred')
+training_over_time(filter_df(rpe, 1, "Dubai"), 'Type of Sessions by Count')
