@@ -8,5 +8,5 @@ readRDS("data/mental_fatigue.rda") %>%
          mood = PCA2) %>% 
   gather("PCA", "value", confidence:mood) %>% 
   arrange(PlayerID, Date) %>% 
-  mutate(Tournament = which_tournament_training_for(Date)) %>% 
-  saveRDS("data/ment_pca.rda")
+  mutate(Tournament = which_tournament_training_for(Date)) 
+  # saveRDS("data/ment_pca.rda")

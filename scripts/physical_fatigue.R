@@ -1,4 +1,5 @@
 # Principal Components Analysis on physical fatigue
+wellness <- readRDS("data/wellness.rda")
 
 physical_data <- wellness %>%
   select(Date, PlayerID, Fatigue, Soreness, SleepHours, SleepQuality, 
@@ -40,7 +41,17 @@ scaled.physical_fatigue <- imp.physical_fatigue %>%
 
 ## Run PCA 
 physical.pca <-  prcomp(scaled.physical_fatigue[3:10], center = TRUE,scale. = TRUE)
+biplot(physical.pca)
 
-library(devtools)
-install_github("vqv/ggbiplot")
+# PCA1: sleep (SleepQuality + Fatigue + Soreness + SleepHours)
+# PCA2: health (Pain + Illness + Menstration + Illness)
+
+scaled.physical_fatigue$PCA1 <- physical.pca$x[, 1]
+scaled.physical_fatigue$PCA2 <- physical.pca$x[, 2]
+
+scaled.physical_fatigue %>%
+  select(1:9) %>% 
+  ungroup 
+  # saveRDS("physical_fatigue.rda")
+
 
