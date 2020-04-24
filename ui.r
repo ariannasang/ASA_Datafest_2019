@@ -5,6 +5,7 @@ fluidPage(
   # theme = "bootstrap_darkly.css",
   titlePanel("Rugby7 Player Analysis"),
   selectInput("psel", "Player", unique(phys_pca$PlayerID), selected = 1),
+  checkboxInput("limit21", "Limit to 3 weeks before Tournament?", value = FALSE),
   splitLayout(
     verticalLayout(
       selectInput("tsel1", "Tournament", tdates$Tournament, selected = tdates$Tournament[1]),

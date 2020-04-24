@@ -25,4 +25,4 @@ plot_time <- function(.data, .title_stub){
          y = "")
 }
   
-plot_time(filter_df(phys_pca, 1, "Dubai"), "title")
+# plot_time(filter_df(phys_pca, 1, "Dubai"), "title")

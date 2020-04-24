@@ -34,4 +34,5 @@ training_over_time <- function(dataframe, title) {
          y = "")
 }
 
-training_over_time(filter_df(rpe, 1, "Dubai"), 'Type of Sessions by Count')
+# training_over_time(filter_df(rpe, 1, "Dubai"), 'Type of Sessions by Count')
+# filter_df(rpe, 1, "Dubai", FALSE) %>% distinct(Date) %>% arrange(Date)

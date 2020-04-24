@@ -2,9 +2,20 @@ library(tidyverse)
 
 theme_set(theme_light())
 
-filter_df <- function(.df, .playerid, .tour){
-  .df %>% 
+filter_df <- function(.df, .playerid, .tour, .limit21 = FALSE){
+  rez <- .df %>% 
     filter(PlayerID == .playerid, Tournament == .tour)
+  
+  last21_days <- rez %>% 
+    distinct(Date) %>% 
+    arrange(Date) %>% 
+    tail(21)
+  
+  if(.limit21){
+    return(rez %>% right_join(last21_days, by = "Date"))
+  } else {
+    return(rez)
+  }
 }
 
 
