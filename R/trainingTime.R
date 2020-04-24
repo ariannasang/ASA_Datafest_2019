@@ -26,6 +26,8 @@ training_over_time <- function(dataframe, title) {
     group_by(SessionType) %>%
     mutate(n = cumsum(n)) %>%
     ggplot(aes(x = Date, y = n, color= SessionType))+
-    geom_line(alpha = .5) #+
-  labs(title = title )
+    geom_line(alpha = .5) +
+    labs(title = title )
 }
+
+training_over_time(filter_df(rpe, 1, "Dubai"), 'fred')
