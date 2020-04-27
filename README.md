@@ -1,4 +1,4 @@
-#![ball](www/rugby7-ball.jpg)
+![ball](www/rugby7-ball.jpg)
 
 # ASA Datafest 2019
 ## Challenge: How can we quantify athletic fatigue?
