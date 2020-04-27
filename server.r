@@ -12,6 +12,6 @@ function(input, output) {
   callModule(timeSeries, "mentPCA1", ment_pca1, "Mental Fatigue")
   callModule(timeSeries, "physPCA2", phys_pca2, "Physical Fatigue")
   callModule(timeSeries, "mentPCA2", ment_pca2, "Mental Fatigue")
-  callModule(trainingTime, "t1", rpe1, "Training for Tournament")
-  callModule(trainingTime, "t2", rpe2, "Training for Tournament")
+  callModule(trainingBar, "t1", rpe1, "Training for Tournament")
+  callModule(trainingBar, "t2", rpe2, "Training for Tournament")
 }

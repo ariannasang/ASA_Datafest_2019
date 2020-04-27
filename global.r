@@ -1,4 +1,7 @@
 library(tidyverse)
+library(gganimate)
+library(gifski)
+library(png)
 
 theme_set(theme_light())
 
@@ -23,8 +26,10 @@ phys_pca <- readRDS("data/phys_pca.rda")
 ment_pca <- readRDS("data/ment_pca.rda")
 rpe <- readRDS("data/rpe2.rda")
   
+
 source("R/slider.R")
 source("R/bargraph.R")
 source("R/timeseries.R")
 source("R/trainingTime.R")
+source("R/trainingBar.R")
 source("R/which_tournament_training_for.R")

@@ -1,21 +1,21 @@
 library(shiny)
 library(shinydashboard)
 
-single_column <- function(pnum){
+single_column <- function(pnum, collapsed = FALSE){
   column(
     width = 6, 
     box(
       title = "Player Status",
       width = NULL, solidHeader = TRUE, status = "primary",
-      collapsible = TRUE,
+      collapsible = TRUE, collapsed = collapsed,
       timeSeriesUI(paste0("physPCA", pnum)), 
       timeSeriesUI(paste0("mentPCA", pnum))
     ),
     box(
       title = "Training Status",
       width = NULL, solidHeader = TRUE, status = "warning",
-      collapsible = TRUE,
-      trainingTimeUI(paste0("t", pnum))
+      collapsible = TRUE, collapsed = collapsed,
+      trainingBarUI(paste0("t", pnum))
     ),
   )
   
@@ -38,7 +38,7 @@ sidebar <-   dashboardSidebar(
 )
 
 sels <- box(
-  width = 8, 
+  width = 6, 
   title = "Selections",
   solidHeader = TRUE, status = "success", 
   box(
@@ -64,7 +64,9 @@ col2 <- single_column(2)
 body <- dashboardBody(
   tabItems(
     tabItem(tabName = "dashboard",
-      fluidRow(sels),
+      fluidRow(sels,      
+               valueBox(10 * 2, "New Orders", icon = icon("credit-card")),
+      ),
       fluidRow(col1, col2)
     ),
     tabItem(tabName = "widgets",
@@ -72,4 +74,5 @@ body <- dashboardBody(
     )
   )
 )
+
 dashboardPage(skin = "blue", header, sidebar, body)
