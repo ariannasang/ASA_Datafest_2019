@@ -1,11 +1,5 @@
 # Player movement: graphing explosiveness
 
-gps <- readRDS("data/gps.rda")
-games <- readRDS("data/games.rda")
-x <- games %>% 
-  select(GameID, Date, Tournament)
-gps <- inner_join(gps, x, by = "GameID")
-
 playerMovementUI <- function(id){
   ns <- NS(id)
   tagList(
@@ -57,4 +51,4 @@ best_game_performance <- function(.filtered_df, .title) {
   }
   
 }
-best_game_performance(filter_df(gps,2,"Dubai"), "fred")
+# best_game_performance(filter_df(gps,2,"Dubai"), "fred")
