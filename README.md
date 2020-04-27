@@ -22,7 +22,7 @@ In order to give the coach a snapshot view of a player’s performance during th
 This chart gives a snapshot view of a player’s training regimen leading up to a tournament. It also specifies which workouts cause the player to be most fatigued. Fatigue is indicated by color. 
 
 ## Mental and Physical Readiness:
-We created two plots, Mental and Physical Status respectively, which measure a player’s perceived preparedness before a game. Using principal components analysis, the Mental Status visualizes the player's mood and confidence during their training sessions leading up to a tournament, and the Physical Status visualizes the player's health and 
+We created two plots, Mental and Physical Status respectively, which measure a player’s perceived preparedness before a game. Using principal components analysis, the Mental Status visualizes the player's mood and confidence during their training sessions leading up to a tournament, and the Physical Status visualizes the player's recovery and wellness.
 * Physical status
   * PCA1: playerRecovery(Pain, Soreness, SleepHours, SleepQuality)
   * PCA2: playerWellness (Illness, Menstruation, Nutrition)
