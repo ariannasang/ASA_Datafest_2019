@@ -7,7 +7,7 @@ Participants were challenged to analyze human performance data from the Canada w
 
 ## Our Solution: Player per Tournament Performance Analysis 
 
-Our team developed a Shiny dashboard for the coach to analyze each player's performance in game *(using GPS and acceleration data from the player's sensors worn during games)* and player's training readiness/fatigue *(using self-reported data and coach assigned workout regimen)*. We believe that paying careful attention to the data gathered from training sessions and games is essential for sports coaches to design personalized training habits for each of their team players.
+Our team developed a Shiny dashboard for the coach to analyze a player's performance in game *(using GPS and acceleration data from the player's sensors worn during games)* and player's training readiness/fatigue *(using self-reported data and coach assigned workout regimen)*.  We believe that paying careful attention to the data gathered from training sessions and games is essential for sports coaches to design personalized training habits for each of their team players.
 
 👉[See our presentation](https://docs.google.com/presentation/d/1Qq2EdIHjCxT5hdI-aC_XERe6D3GoNwCnsT3aficZUXE/edit?usp=sharing)
 
