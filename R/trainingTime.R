@@ -13,21 +13,33 @@ trainingTime <- function(input, output, session, data, title_stub){
   })
 }
 
-training_over_time <- function(dataframe, title) {
-  dataframe %>% 
+trainingExertion <- function(.dataframe, .Date, .n_days, .title) {
+
+  days <- .dataframe %>%
+    distinct(Date) %>%
+    filter(Date <= .Date) %>%
+    head(.n_days + 1) 
+  
+
+  .dataframe %>%
     filter(Training == "Yes",
            !is.na(SessionType),
-           SessionType != "Game") %>% 
-    arrange(Date) %>%
-    tail(21) %>% # 21 days before
-    group_by(Date) %>%
-    count(SessionType) %>%
-    ungroup() %>%
+           !is.na(SessionLoad),
+           SessionType != "Game",
+           Date %in% days$Date) %>%
+    select(Date, SessionType, SessionLoad) %>%
     group_by(SessionType) %>%
-    mutate(n = cumsum(n)) %>%
-    ggplot(aes(x = Date, y = n, color= SessionType))+
-    geom_line(alpha = .5) +
-    labs(title = title )
+    mutate(SessionType_avgLoad = mean(SessionLoad)) %>%
+    ungroup() %>%
+    mutate(overexerted = ifelse(SessionLoad > SessionType_avgLoad, 1, 0))  %>%
+    ggplot(aes(x = SessionType, y = SessionLoad, fill= overexerted)) + 
+    geom_bar(stat='identity') + 
+    facet_wrap(~Date)+ 
+    labs(title = .title)+ 
+    theme(axis.text.x = element_text(angle= 45, hjust = 1))
 }
 
-training_over_time(filter_df(rpe, 1, "Dubai"), 'fred')
+# d <- as.Date("2017-11-26")
+# trainingExertion(filter_df(rpe, 3, "Dubai"), d,4, "example")
+
+
