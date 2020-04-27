@@ -40,29 +40,42 @@ trainingTime <- function(input, output, session, data, title_stub){
   })
   
   output$graph <- renderPlot({
-    training_over_time(
-      data(), title_stub, 
-      input$inDate, input$daysBefore)
+    trainingExertion(
+      data(), 
+      input$inDate, input$daysBefore,
+      title_stub)
   })
   
   
   
 }
 
-training_over_time <- function(dataframe, title, date, days) {
+trainingExertion <- function(.dataframe, .Date, .n_days, .title) {
 
-  dataframe %>% 
+  days <- .dataframe %>%
+    distinct(Date) %>%
+    filter(Date <= .Date) %>%
+    head(.n_days + 1) 
+  
+
+  .dataframe %>%
     filter(Training == "Yes",
            !is.na(SessionType),
-           SessionType != "Game") %>% 
-    count(SessionType) %>%
-    ggplot(aes(n, SessionType)) +
-    geom_col() + 
-    scale_x_continuous(labels = scales::number_format()) + 
-    labs(title = title,
-         x = "", 
-         y = "")
+           !is.na(SessionLoad),
+           SessionType != "Game",
+           Date %in% days$Date) %>%
+    select(Date, SessionType, SessionLoad) %>%
+    group_by(SessionType) %>%
+    mutate(SessionType_avgLoad = mean(SessionLoad)) %>%
+    ungroup() %>%
+    mutate(overexerted = ifelse(SessionLoad > SessionType_avgLoad, 1, 0))  %>%
+    ggplot(aes(x = SessionType, y = SessionLoad, fill= overexerted)) + 
+    geom_bar(stat='identity') + 
+    facet_wrap(~Date)+ 
+    labs(title = .title)+ 
+    theme(axis.text.x = element_text(angle= 45, hjust = 1))
 }
 
-# training_over_time(filter_df(rpe, 1, "Dubai"), 'Type of Sessions by Count')
-# filter_df(rpe, 1, "Dubai", FALSE) %>% distinct(Date) %>% arrange(Date)
+d <- as.Date("2017-11-26")
+trainingExertion(filter_df(rpe, 3, "Dubai"), d,4, "example")
+
