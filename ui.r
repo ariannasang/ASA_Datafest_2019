@@ -44,24 +44,29 @@ sidebar <-   dashboardSidebar(
 )
 
 sels <- box(
-  width = 6, 
+  width = 8, 
   title = "Selections",
   solidHeader = TRUE, status = "success", 
   box(
     width = 6,
     selectInput(
       "psel", "Player", unique(phys_pca$PlayerID), 
-      selected = sample(unique(phys_pca$PlayerID), 1)
+      # selected = sample(unique(phys_pca$PlayerID), 1)
+      selected = 1
     ),
     checkboxInput("limit21", "Only 3 weeks before matches?", value = FALSE)
   ),
   box(
     selectInput("tsel1", "Tournament 1:", tdates$Tournament, 
-      selected = sample(tdates$Tournament, 1)
+      # selected = sample(tdates$Tournament, 1)
+      selected = "Dubai"
     ),
     selectInput("tsel2", "Tournament 2:", tdates$Tournament, 
-                selected = sample(tdates$Tournament, 1)
-    )
+                # selected = sample(tdates$Tournament, 1)
+                selected = "Dubai"
+                
+    ),
+    actionButton("go", "Submit!")
   )
 )
 
@@ -70,9 +75,7 @@ col2 <- single_column(2)
 body <- dashboardBody(
   tabItems(
     tabItem(tabName = "dashboard",
-      fluidRow(sels,      
-               valueBox(10 * 2, "New Orders", icon = icon("credit-card")),
-      ),
+      fluidRow(sels),
       fluidRow(col1, col2)
     ),
     tabItem(tabName = "widgets",

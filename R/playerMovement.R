@@ -7,49 +7,45 @@ playerMovementUI <- function(id){
 }
 
 playerMovementTime <- function(input, output, session, data, title_stub){
-
-  # output$graph <- renderImage({
-  #   outfile <- tempfile(fileext='.gif')
-  # 
-  #   # now make the animation
-  #   p = best_game_performance(data(), title_stub)
-  #   anim_save("outfile.gif", animate(p)) # New
-  # 
-  #   # Return a list containing the filename
-  #   list(src = "outfile.gif",
-  #        contentType = 'image/gif',
-  #        width = 400,
-  #        height = 300,
-  #        alt = "animated-graph-is-loading"
-  #   )
-  # },
-  # deleteFile = TRUE)
-  
-  # A dynamically-sized plot
   output$graph <- renderImage({
-    # Read plot2's width and height. These are reactive values, so this
-    # expression will re-run whenever these values change.
-    # ratio <- 0.5
-    # width  <- session$clientData$output_graph_width * ratio
-    # height <- session$clientData$output_graph_height * ratio
     w = 375
     h = 410
     
-    # A temp file to save the output.
-    outfile <- tempfile(fileext='.gif')
-    
     # now make the animation
-    p = best_game_performance(data(), title_stub)
-    gif_id <- paste0("outfile", sample(1:1E3, 1), ".gif")
-    message(gif_id)
-    anim_save(gif_id, animate(p))
-    # Return a list containing the filename
-    list(src = gif_id,
-         contentType = 'image/gif',
-         width = w,
-         height = h,
-         alt = "animated-graph-is-loading"
-    )
+    p = best_game_performance(data(), title_stub) # returns static/animation
+    if(sum(class(p) == "gganim") > 0) {
+      # A temp file to save the output.
+      outfile <- tempfile(fileext='.gif')
+      gif_id <- paste0("outfile", sample(1:1E3, 1), ".gif")
+      message(gif_id)
+      anim_save(gif_id, animate(p))
+      # Return a list containing the filename
+      list(src = gif_id,
+           contentType = 'image/gif',
+           width = w,
+           height = h,
+           alt = "animated-graph-is-loading"
+      )
+      
+    } else {
+      # A temp file to save the output. It will be deleted after renderImage
+      # sends it, because deleteFile=TRUE.
+      message("didnt find gganim")
+      outfile <- tempfile(fileext='.png')
+      
+      # Generate a png
+      png(outfile, width=w, height=h)
+      plot.new()
+      title("Player didn't play this tournament")
+      dev.off()
+      # Return a list
+      list(src = outfile,
+           contentType = 'image/gif',
+           width = w,
+           height = h,
+           alt = "static-graph-is-loading"
+      ) 
+    }
   }, deleteFile = TRUE)
   
 }
@@ -81,7 +77,7 @@ best_game_performance <- function(.filtered_df, .title) {
     message("Did not play during this tournament")
   }
   
-  if (nrow(filtered_df)!=0){
+  else {
     best_game <- filtered_df %>%
       group_by(GameID) %>%
       summarize(avg_speed = mean(Speed)) %>%
@@ -91,4 +87,4 @@ best_game_performance <- function(.filtered_df, .title) {
   }
   
 }
-# best_game_performance(filter_df(gps,2,"Dubai"), "fred")
+# best_game_performance(filter_df(gps,1,"Dubai"), "fred")
