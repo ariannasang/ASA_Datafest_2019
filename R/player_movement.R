@@ -19,7 +19,9 @@ player_movement <- function(.dataframe, .GameID, .title) {
   .dataframe %>% 
     select(GameID, FrameID, Speed, Longitude, Latitude) %>%
     filter(FrameID %% 10 == 0,
-           GameID == .GameID) %>%
+           GameID == .GameID,
+           !is.na(Speed),
+           !is.na(contains("tude"))) %>%
     mutate(FrameID = row_number()) %>%
     ggplot() + 
     geom_point(aes(x = Longitude, y = Latitude, color = Speed)) +
