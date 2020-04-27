@@ -10,22 +10,6 @@ trainingBar <- function(input, output, session, data, title_stub){
     plot_trainBar(data(), title_stub)
   })
   
-  # output$graph <- renderImage({
-  #   outfile <- tempfile(fileext='.gif')
-  #   
-  #   # now make the animation
-  #   p = plot_time(data(), title_stub)
-  #   anim_save("outfile.gif", animate(p)) # New
-  #   
-  #   # Return a list containing the filename
-  #   list(src = "outfile.gif",
-  #        contentType = 'image/gif',
-  #        width = 400,
-  #        height = 300,
-  #        alt = "animated-graph-is-loading"
-  #   )
-  # }, 
-  # deleteFile = TRUE)
 }
 
 # TODO: set y limits centered to 0

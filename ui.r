@@ -5,6 +5,12 @@ single_column <- function(pnum, collapsed = FALSE){
   column(
     width = 6, 
     box(
+      title = "Best Game Movement",
+      width = NULL, solidHeader = TRUE, status = "primary",
+      collapsible = TRUE, collapsed = collapsed,
+      playerMovementUI(paste0("mv", pnum))
+    ),
+    box(
       title = "Player Status",
       width = NULL, solidHeader = TRUE, status = "primary",
       collapsible = TRUE, collapsed = collapsed,
