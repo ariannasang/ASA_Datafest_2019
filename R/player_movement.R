@@ -41,6 +41,8 @@ best_game_performance <- function(.filtered_df, .title) {
     
   if (nrow(filtered_df) == 0) {
     message("Did not play during this tournament")
+    ggplot() +
+      labs("Player did not play this tournament.")
   }
   
   if (nrow(filtered_df)!=0){
