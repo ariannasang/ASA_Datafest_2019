@@ -21,7 +21,7 @@ single_column <- function(pnum, collapsed = FALSE){
       title = "Training Status",
       width = NULL, solidHeader = TRUE, status = "warning",
       collapsible = TRUE, collapsed = collapsed,
-      trainingBarUI(paste0("t", pnum))
+      trainingTimeUI(paste0("t", pnum))
     ),
   )
   

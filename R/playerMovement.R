@@ -17,7 +17,7 @@ playerMovementTime <- function(input, output, session, data, title_stub){
       # A temp file to save the output.
       outfile <- tempfile(fileext='.gif')
       gif_id <- paste0("outfile", sample(1:1E3, 1), ".gif")
-      message(gif_id)
+
       anim_save(gif_id, animate(p))
       # Return a list containing the filename
       list(src = gif_id,
@@ -30,7 +30,7 @@ playerMovementTime <- function(input, output, session, data, title_stub){
     } else {
       # A temp file to save the output. It will be deleted after renderImage
       # sends it, because deleteFile=TRUE.
-      message("didnt find gganim")
+
       outfile <- tempfile(fileext='.png')
       
       # Generate a png
