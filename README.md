@@ -11,7 +11,7 @@ Our team developed a Shiny dashboard for the coach to analyze a player's perform
 
 👉[See our presentation](https://docs.google.com/presentation/d/1Qq2EdIHjCxT5hdI-aC_XERe6D3GoNwCnsT3aficZUXE/edit?usp=sharing)
 
-![dashboard-screenshot](www/dash_sshot.png)
+![dashboard-screenshot](www/dash.gif)
 
 ## Dashboard Components
 
