@@ -1,6 +1,7 @@
 ![ball](www/rugby7-ball.jpg)
 
 # ASA Datafest 2019
+Team:  Frederick Corpuz, Joseph Cutler, Arianna Sang, Anna Zagoren
 ## Challenge: How can we quantify athletic fatigue?
 
 Participants were challenged to analyze human performance data from the Canada women's national rugby team to measure player fatigue and provide the team's coach with recommendations to improve game performance. 
@@ -31,8 +32,6 @@ We created two plots, Mental and Physical Status respectively, which measure a p
   * PCA2: playerMood (Irritability + Desire)
 
 ## Results
-Team:  Frederick Corpuz, Joseph Cutler, Arianna Sang, Anna Zagoren
-
 Our team won first place at the American Statistical Association 2019 Datafest competition held at Wesleyan University. [(blog post)](https://newsletter.blogs.wesleyan.edu/2019/04/15/wesleyan-wins-best-in-show-at-2019-datafest/) 
 
 For more information on the American Statistical Association's nationwide Datafest competition, follow [this link](https://ww2.amstat.org/education/datafest/index.cfm).
