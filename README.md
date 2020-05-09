@@ -19,9 +19,6 @@ Our team developed a Shiny dashboard for the coach to analyze a player's perform
 ### Videos of Game Performance:
 In order to give the coach a snapshot view of a player’s performance during the game, we created a minimalist video graphic of their movement throughout. The coach can use this to gain a birds-eye understanding of a player’s match. Created with the gganimate package, the animation displays a player (represented by a point) moving around in space. Speed is indicated by color.
 
-### Training Before Tournament:
-This chart gives a snapshot view of a player’s training regimen leading up to a tournament. It also specifies which workouts cause the player to be most fatigued. Fatigue is indicated by color. 
-
 ### Mental and Physical Readiness:
 We created two plots, Mental and Physical Status respectively, which measure a player’s perceived preparedness before a game. Using principal components analysis, the Mental Status visualizes the player's mood and confidence during their training sessions leading up to a tournament, and the Physical Status visualizes the player's recovery and wellness.
 * Physical status
@@ -30,6 +27,9 @@ We created two plots, Mental and Physical Status respectively, which measure a p
 * Mental status
   * PCA1: playerConfidence (TrainingReadiness + FocusRating + ObjectiveRating)
   * PCA2: playerMood (Irritability + Desire)
+  
+### Training Before Tournament:
+This chart gives a snapshot view of a player’s training regimen leading up to a tournament. It also specifies which workouts cause the player to be most fatigued. Fatigue is indicated by color. 
 
 ## Results
 Our team won first place at the American Statistical Association 2019 Datafest competition held at Wesleyan University. [(blog post)](https://newsletter.blogs.wesleyan.edu/2019/04/15/wesleyan-wins-best-in-show-at-2019-datafest/) 
