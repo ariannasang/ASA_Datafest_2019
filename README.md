@@ -29,7 +29,7 @@ We created two plots, Physical and Mental Status respectively, which measure a p
   * PCA2: playerMood (Irritability + Desire)
   
 ### Training Before Tournament:
-This chart gives a snapshot view of a player’s training regimen leading up to a tournament. It also specifies which workouts cause the player to be most fatigued. Fatigue is indicated by color. 
+This chart gives a snapshot view of a player’s training regimen leading up to a tournament. It also specifies which workouts cause the player to be most fatigued. Fatigue is indicated by color.
 
 ## Results
 Our team won first place at the American Statistical Association 2019 Datafest competition held at Wesleyan University. [(blog post)](https://newsletter.blogs.wesleyan.edu/2019/04/15/wesleyan-wins-best-in-show-at-2019-datafest/) 
