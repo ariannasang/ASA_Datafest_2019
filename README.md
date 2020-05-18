@@ -20,13 +20,13 @@ Our team developed a Shiny dashboard for the coach to analyze a player's perform
 In order to give the coach a snapshot view of a player’s performance during the game, we created a minimalist video graphic of their movement throughout. The coach can use this to gain a birds-eye understanding of a player’s match. Created with the gganimate package, the animation displays a player (represented by a point) moving around in space. Speed is indicated by color.
 
 ### Mental and Physical Readiness:
-We created two plots, Mental and Physical Status respectively, which measure a player’s perceived preparedness before a game. Using principal components analysis, the Mental Status visualizes the player's mood and confidence during their training sessions leading up to a tournament, and the Physical Status visualizes the player's recovery and wellness.
-* Mental status
-  * PCA1: playerConfidence (TrainingReadiness + FocusRating + ObjectiveRating)
-  * PCA2: playerMood (Irritability + Desire)
+We created two plots, Physical and Mental Status respectively, which measure a player’s perceived preparedness before a game. Using principal components analysis, the Physical Status visualizes the player's recovery and wellness, and the Mental Status visualizes the player's mood and confidence during their training sessions leading up to a tournament.
 * Physical status
   * PCA1: playerRecovery(Pain, Soreness, SleepHours, SleepQuality)
   * PCA2: playerWellness (Illness, Menstruation, Nutrition)
+* Mental status
+  * PCA1: playerConfidence (TrainingReadiness + FocusRating + ObjectiveRating)
+  * PCA2: playerMood (Irritability + Desire)
   
 ### Training Before Tournament:
 This chart gives a snapshot view of a player’s training regimen leading up to a tournament. It also specifies which workouts cause the player to be most fatigued. Fatigue is indicated by color. 
